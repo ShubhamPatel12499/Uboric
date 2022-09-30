@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #navbar{
+            /* border:1px solid red; */
+            display:flex;
+            width:100%;
+            height:80px;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar a{
+        color: black;
+        text-decoration:none;
+        }
+        #navbar #start{
+            /* border:1px solid black; */
+            margin-left: 10px;
+            width:30%;
+            /* margin: auto; */
+        }
+        #navbar #start>a>img{
+            width:35%;
+            height:60px;
+            margin-top: 5px;
+            margin-left: 120px;
+        }
+        #navbar #start>a>img:hover{
+            cursor: pointer;
+        }
+        #navbar #middle{
+            /* border:1px solid teal; */
+            display:flex;
+            gap:10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width:40%;
+        }
+        #navbar #middle>p>a{
+            font-family: Jost, Arial, sans-serif;
+            font-size:16px;
+            margin-left: 30px;
+        }
+        #navbar #middle>p>a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            color:orangered;
+        }
+        #navbar #last{
+            /* border:1px solid black; */
+            display:flex;
+            /* gap:10px; */
+            margin-left: 50px;
+            /* width:30%; */
+        }
+        #navbar #last>a>img{
+            /* width:80%; */
+            height:25px;
+            margin-left: 20px;
+        }
+        #navbar #last>a>img:hover{
+            cursor: pointer;
+        }
+        #slideshow #slide{
+            width:100%;
+            height:75vh;
+            margin-top: 50px;
+        }
+        #slideshow #slide>img{
+            width:100%;
+            height:100%;
+        }
+        #slideshow #previous{
+            top: 400px;
+            right: 35px;
+      }
+       #slideshow #next{
+            top: 400px;
+            left: 35px;
+      }
+      #slideshow>button {
+            background-color: rgba(128, 128, 128, .0);
+            border-radius: 100%;
+            color: grey;
+            font-size: 50px;
+            position: absolute;
+            border: 0px;
+            color: rgb(103, 101, 101);
+        }
+
+        #slideshow>button:hover {
+            color: white;
+        }
+        #index_middle{
+            height:40vh;
+            /* border:1px solid red; */
+            margin-top:20px;
+            display:flex;
+            gap:40px;
+        }
+        #index_middle img{
+            width:33%;
+            text-decoration:none solid rgb(17, 17, 17);
+            display:flex;
+        }
+        #container-1{
+            color:rgb(17, 17, 17);
+            font-family:Jost, Arial, sans-serif;
+            font-size:32px;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        #container{
+            display:grid;
+            width:90%;
+            grid-template-columns:repeat(4,1fr);
+            /* grid-template-rows:repeat(3,auto); */
+            gap:20px;
+            margin:auto;
+            margin-top:20px;
+            justify-content:center;
+            align-items:center;
+           
+        }
+        #container>div{
+            display:grid;
+            width:90%;
+            padding:20px;
+            border-radius: 10px;
+            /* margin: auto; */
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* justify-content: center;
+            align-items:center; */
+        }
+        #container>div>img{
+            /* display:grid; */
+            /* display:block; */
+            width:100%;
+            height:250px;
+            margin:auto;
+        }
+        #container>div>name{
+            /* display:grid; */
+            width:100%;
+            margin-top:20px;
+            text-align:center;
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            color:rgb(17, 17, 17)
+        }
+        #container>div>p{
+            width:100%;
+            margin-top:10px;
+            text-align:center;
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            color:rgb(255, 111, 97)
+        }
+        #container>div>button{
+            width:40%;
+            font-size:20px;
+            margin:auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color:white;
+            background-color: black;
+        }
+        #container-2{
+            color:rgb(17, 17, 17);
+            font-family:Jost, Arial, sans-serif;
+            font-size:32px;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        #container-3{
+            margin-top: 30px;
+            height:40vh;
+            /* border:1px solid red; */
+            margin-top:20px;
+            display:flex;
+            gap:20px;
+        }
+        #container-3 img{
+            border-radius: 10px;
+            width:24%;
+            text-decoration:none solid rgb(17, 17, 17);
+            display:flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #footer{
+        /* border:1px solid red; */
+        width:100%;
+        /* background-image:('https://www.uboric.com/wp-content/uploads/2020/08/google-play1.png'); */
+        /* background-image: */
+        background-color: rgb(60, 57, 57);
+        }
+        #footer #upper{
+            /* margin-top: 50px; */
+            border:1px solid rgb(82, 82, 82) ;
+            width:100%;
+            height:180px;
+        }
+        #footer #upper>div:nth-child(1){
+            margin:auto;
+            margin-left: 38%;
+            color:rgb(255, 255, 255);
+            font-family:Jost, Arial, sans-serif;
+            font-size:23px;
+        }
+        #footer #upper>div:nth-child(2){
+            display:flex;
+            margin-left:30%;
+            margin-top:30px;
+        }
+        #footer #upper>div:nth-child(2)>input{
+            background-color:rgb(48, 48, 48);
+            color:white;
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            padding:15px;
+            width:40%;
+            border: none;
+        }
+        #footer #upper>div:nth-child(2)>button{
+            background-color:rgb(82, 82, 82);
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            color:white;
+            width:15%;
+            margin-left: 8px;
+            border: none;
+        }
+        #footer #upper>div:nth-child(2)>button:hover{
+            cursor:pointer;
+        }
+        #footer #middle{
+            /* border:1px solid white; */
+            display:flex;
+            border:1px solid rgb(82, 82, 82) ;
+        }
+        #footer #middle #middle_first{
+            /* border:1px solid white; */
+            margin-top: 30px;
+            width:20%;
+            margin-left: 120px;
+        }
+        #footer #middle #middle_first>div:nth-child(1)>img{
+            /* border:1px solid yellow; */
+            height:120px;
+        }
+        #footer #middle #middle_first>div:nth-child(2)>img{
+            margin-top: 10px;
+            /* border:1px solid yellow; */
+            height:30px;
+            margin-left: 10px;
+        }
+        #footer #middle #middle_second{
+            width:80%;
+            /* border:1px solid white; */
+            display:flex;
+            gap:80px;
+            margin-left:100px;
+            color: white;
+        
+        }
+        #footer #middle #middle_second h3{
+            font-family:Jost, Arial, sans-serif;
+            font-size:13px;
+        }
+        #footer #middle #middle_second h3:hover{
+            cursor: pointer;
+        }
+        #footer #middle #middle_second p{
+            font-family:Jost, Arial, sans-serif;
+            font-size:13px;
+        }
+        #footer #middle #middle_second p:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #footer #lower{
+            display:flex;
+            border:1px solid rgb(82, 82, 82);
+        }
+        #footer #lower #lower_first{
+            width:60%;
+        }
+        #footer #lower #lower_last{
+            margin: auto;
+            width:40%;
+            margin-left: 50px;
+            display:flex;
+            gap:20px;
+            margin-left: 620px;
+        }
+        #footer #lower h3{
+            font-family:Jost, Arial, sans-serif;
+            font-size:14px;
+            color:white;
+            margin-left: 150px;
+        }
+        #footer #lower img{
+            /* margin: auto; */
+            height:30px;
+        }
+    </style>
+</head>
+<body onload="SlideShow()">
+    <div id="navbar">
+        <div id="start">
+            <a href=""><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
+        </div>
+        <div id="middle">
+          <p> <a href="">Home</a></p>  
+          <p> <a href="">About Us</a></p>  
+          <p> <a href="">Shop</a></p>  
+          <p> <a href="">Categories</a></p>  
+          <p> <a href="">Contact Us</a></p>  
+        </div>
+        <div id="last">
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
+            <a href="./Login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
+            <a href=""><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
+            <a href="./cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
+        </div>
+    </div>
+    <div id="slideshow">
+        <div id="slide">  </div>
+        <button id="previous" onclick="previous()">></button>
+        <button id="next" onclick="next()"><</button>
+    </div>
+    <div id="index_middle">
+        <img src="https://c0.wallpaperflare.com/preview/557/939/623/stove-cooking-utensils-cooking-kitchenware-thumbnail.jpg" alt="image 1"/>
+        <img src="https://rukminim1.flixcart.com/image/416/416/kwpam4w0/container/x/q/t/10-fo-kitkat-green-1100ml-10p-gk-sales-original-imag9bf5ygmgtfdc.jpeg?q=70" alt="image 2"/>
+        <img src="https://cdn.shopify.com/s/files/1/0055/7855/5503/articles/banner_7_1100x.jpg?v=1639037896" alt="image 3"/>
+    </div>
+    <h1 id="container-1">Best Selling Products</h1>
+    <div id="container"></div>
+    <h1 id="container-2">New Arrivals</h1>
+    <div id="container-3">
+        <img src="https://www.uboric.com/wp-content/uploads/2022/09/vmfgz_512_webp-370x262.jpg" alt="image 1"/>
+        <img src="https://www.uboric.com/wp-content/uploads/2022/09/tqpgz_512_webp-370x342.jpg" alt="image 2"/>
+        <img src="https://www.uboric.com/wp-content/uploads/2022/08/519oLttxcZL._UL1000_-370x370.jpg" alt="image 3"/>
+        <img src="https://www.uboric.com/wp-content/uploads/2022/08/41qdwDJY9qL._UL1000_-1-370x370.jpg" alt="image 4"/>
+    </div>
+    <div id="footer">
+        <!-- <img src="https://www.uboric.com/wp-content/uploads/2020/08/google-play1.png" alt="image" /> -->
+        <div id="upper">
+          <div>
+            <h3>Want style Ideas and Treats?</h3>
+          </div>
+          <div>
+            <input type="email" placeholder="Enter Email *"/>
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div id="middle">
+         <div id="middle_first">
+          <div>
+           <img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/uboric.png" alt="Uboric_logo" />
+          </div>
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/44/44646.png" alt="facebook" />
+            <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
+          </div>
+         </div>
+         <div id="middle_second">
+            <div id="middle_second_first">
+              <h3>SUPPORT</h3>
+              <p>About Us</p>
+              <p>Contact Us</p>
+            </div>
+            <div id="middle_second_second">
+                <h3>SHOP</h3>
+                <p>My account</p>
+            </div>
+            <div id="middle_second_third">
+                <h3>COMPANY</h3>
+                <p>Shipping & Returns</p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div id="middle_second_fourth">
+                <h3>CONTACT</h3>
+                <p>Customer Care</p>
+                <p>Contact Support Available</p>
+                <p>Mon To Sat : 10:00 Am to 6:00 Pm</p>
+                <p>E-mail</p>
+                <p>uboricllp@gmail.com</p>
+                <p>Mobile</p>
+                <p>+91 97243 82162</p>
+                <p>+91 82000 99386</p>
+            </div>
+         </div>
+        </div>
+        <div id="lower">
+            <div id="lower_first">
+               <h3>© 2019 – 2022 UBORIC. ALL RIGHTS RESERVED.</h3>
+            </div>
+            <div id="lower_last">
+                <img src="https://cdn-icons-png.flaticon.com/512/44/44646.png" alt="facebook" />
+                <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     let image= [
+       "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+       "https://images.pexels.com/photos/8306363/pexels-photo-8306363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+       "https://images.pexels.com/photos/5418890/pexels-photo-5418890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+       "https://images.pexels.com/photos/5418897/pexels-photo-5418897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ];
+    let index=0;
+    let id;
+
+    let SlideShow=()=>{
+        let container = document.getElementById("slide");
+
+        id = setInterval(()=>{
+            if(index===image.length){
+                index=0;
+            }
+            container.innerHTML = null;
+            let img= document.createElement("img");
+            img.src= image[index];
+            container.append(img);
+            index++;
+        },3500)
+    };
+
+    // let stop=()=>{
+    //   clearInterval(id);
+    // }
+
+    // let start = ()=>{
+    //     SlideShow();
+    // };
+    let previous= ()=>{
+        let container = document.getElementById("slide");
+        let img= document.createElement("img");
+            if(index===0){
+                index=image.length-1;
+                img.setAttribute('src',image[index]);
+            }
+            else{
+                index--;
+                img.setAttribute('src',image[index]);
+            }
+          container.innerHTML = null;
+          container.append(img);
+    }
+    let next= ()=>{
+        let container = document.getElementById("slide");
+        let img= document.createElement("img");
+            if(index===image.length-1){
+                index=0;
+                img.setAttribute('src',image[index]);
+            }
+            else{
+                index++;
+                img.setAttribute('src',image[index]);
+            }
+
+            container.innerHTML = null;
+            container.append(img);
+        }
+
+        let Products=
+    [{ poster:"https://www.uboric.com/wp-content/uploads/2022/08/photo_2022-02-24_12-22-08-370x370.jpg",
+    name:"Quick & Easy 6 Blade Push Chopper 1000ML",
+    price: 349.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/5hto1_512_webp-370x282.jpg",
+    name:"Mens Casual Shoes",
+    price: 799.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/61ZFLlc1NcL-370x370.jpg",
+    name:"Electric Mini Food Processor with USB Cable",
+    price:  499.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/tqpgz_512_webp-370x342.jpg",
+    name:"Mens Casual Shoes",
+    price: 1039.00,
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/IMG_20220517_173135_289_1-370x370.jpg",
+    name:"26 carat Elegant Jewellery bracelet",
+    price: 1799.00,
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/IMG_20220326_174041_206_11-370x370.jpg",
+    name:"26 carat Elegant Jewellery Necklace",
+    price: 5499.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/png_20220328_105434_0000-370x370.png",
+    name:"26 carat Elegant Jewellery Golden Ring all...",
+    price:1249.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/photo_2022-07-25_21-23-45-370x370.jpg",
+    name:"26 carat Elegant Jewellery kada",
+    price:1599.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/61Tb9AiGN1L._SL1500_-370x370.jpg",
+    name:"Philips Hp 8303/06 Hair Straightener",
+    price:1169.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/2-2-1-370x370.png",
+    name:"Hand blender",
+    price: 1975.50
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/5-38-370x370.jpg",
+    name:"Philips Air Purifier – Series 2000...",
+    price: 19999.00
+    },
+    { poster:"https://www.uboric.com/wp-content/uploads/2022/08/61QyBa0XAWL._SL1280_-370x370.jpg",
+    name:"4 pc Dry Fruit Serving Bowl Set With Tray,...",
+    price: 465.00
+    }
+  ]
+
+                     let data=JSON.parse(localStorage.getItem("productlist"))||[];
+                     displayData(Products)
+                    //   data.push(Products);
+                        // localStorage.setItem("data",JSON.stringify(data))
+
+                        function displayData(Products){
+
+                        Products.forEach(function (elem){
+                        
+                        let box=document.createElement("div");
+                        
+                        let poster= document.createElement("img");
+                        poster.setAttribute("src",elem.poster);
+
+                        let Name= document.createElement("name");
+                        Name.innerText=elem.name;
+
+                        let price= document.createElement("p");
+                        price.innerText="₹"+" " +elem.price;
+
+                        let button = document.createElement("button");
+                        button.setAttribute("class","book_now");
+                        button.onclick=()=>{
+                            saveData(elem);
+                        }
+                        button.innerText= "ADD";
+
+                        box.append(poster,Name,price,button);
+                        document.querySelector("#container").append(box);
+                        
+                    });
+                    }
+
+                       let saveData = (elem) =>{
+                        data.push(elem);
+                        localStorage.setItem("productlist",JSON.stringify(data));
+                        alert("Product has been added to the cart")
+                        // window.location.href="checkout.html"
+                       }
+</script>
