@@ -104,6 +104,8 @@
             gap:40px;
         }
         #index_middle img{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
             width:33%;
             text-decoration:none solid rgb(17, 17, 17);
             display:flex;
@@ -315,10 +317,10 @@
 <body onload="SlideShow()">
     <div id="navbar">
         <div id="start">
-            <a href=""><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
+            <a href="./index.html"><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
         </div>
         <div id="middle">
-          <p> <a href="">Home</a></p>  
+          <p> <a href="./index.html">Home</a></p>  
           <p> <a href="">About Us</a></p>  
           <p> <a href="">Shop</a></p>  
           <p> <a href="">Categories</a></p>  
@@ -326,9 +328,9 @@
         </div>
         <div id="last">
             <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
-            <a href="./Login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
+            <a href="./html/login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
             <a href=""><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
-            <a href="./cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
+            <a href="./html/cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
         </div>
     </div>
     <div id="slideshow">
@@ -513,7 +515,7 @@
     },
     { poster:"https://www.uboric.com/wp-content/uploads/2022/08/2-2-1-370x370.png",
     name:"Hand blender",
-    price: 1975.50
+    price: 1975.00
     },
     { poster:"https://www.uboric.com/wp-content/uploads/2022/08/5-38-370x370.jpg",
     name:"Philips Air Purifier – Series 2000...",
@@ -527,8 +529,8 @@
 
                      let data=JSON.parse(localStorage.getItem("productlist"))||[];
                      displayData(Products)
-                    //   data.push(Products);
-                        // localStorage.setItem("data",JSON.stringify(data))
+                     //   data.push(Products);
+                     // localStorage.setItem("data",JSON.stringify(data))
 
                         function displayData(Products){
 
@@ -546,22 +548,30 @@
                         price.innerText="₹"+" " +elem.price;
 
                         let button = document.createElement("button");
-                        button.setAttribute("class","book_now");
-                        button.onclick=()=>{
-                            saveData(elem);
+                        button.innerText = "Add to Cart";
+                        button.addEventListener("click", function () {
+                        let cartData = JSON.parse(localStorage.getItem("productlist")) || [];
+                        if (cartDatapresent(cartData, elem) === false) {
+                            cartData.push(elem);
+                            localStorage.setItem("productlist", JSON.stringify(cartData));
+                            alert("Item successfully added to the cart");
+                        } else {
+                            alert("Item already in the cart");
                         }
-                        button.innerText= "ADD";
+                        });
 
                         box.append(poster,Name,price,button);
                         document.querySelector("#container").append(box);
                         
                     });
-                    }
 
-                       let saveData = (elem) =>{
-                        data.push(elem);
-                        localStorage.setItem("productlist",JSON.stringify(data));
-                        alert("Product has been added to the cart")
-                        // window.location.href="checkout.html"
-                       }
+                    function cartDatapresent(cartData, elem) {
+                        for (let i = 0; i < cartData.length; i++) {
+                        if (cartData[i].name === elem.name) {
+                            return true;
+                        }
+                        }
+                        return false;
+                     }
+                    }
 </script>
