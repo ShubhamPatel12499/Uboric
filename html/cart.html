@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+         #navbar{
+            /* border:1px solid red; */
+            display:flex;
+            width:100%;
+            height:80px;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar a{
+        color: black;
+        text-decoration:none;
+        }
+        #navbar #start{
+            /* border:1px solid black; */
+            margin-left: 10px;
+            width:30%;
+            /* margin: auto; */
+        }
+        #navbar #start>a>img{
+            width:35%;
+            height:60px;
+            margin-top: 5px;
+            margin-left: 120px;
+        }
+        #navbar #start>a>img:hover{
+            cursor: pointer;
+        }
+        #navbar #middle{
+            /* border:1px solid teal; */
+            display:flex;
+            gap:10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width:40%;
+        }
+        #navbar #middle>p>a{
+            font-family: Jost, Arial, sans-serif;
+            font-size:16px;
+            margin-left: 30px;
+        }
+        #navbar #middle>p>a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            color:orangered;
+        }
+        #navbar #last{
+            /* border:1px solid black; */
+            display:flex;
+            /* gap:10px; */
+            margin-left: 50px;
+            /* width:30%; */
+        }
+        #navbar #last>a>img{
+            /* width:80%; */
+            height:25px;
+            margin-left: 20px;
+        }
+        #navbar #last>a>img:hover{
+            cursor: pointer;
+        }
+        #cart{
+                display:grid;
+                grid-template-columns:repeat(2,1fr);
+                gap:20px;
+        }
+        #cart div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+            margin:auto;
+            border-radius: 10px;
+            padding:5px;
+            justify-content: center;
+            align-items: center;
+        }
+       #cart img{
+        width:40%;
+        margin-left: 150px;
+        border-radius: 10px;
+        }
+        #cart h3{
+            margin-top:10px;
+            text-align: center;
+        }
+        #cart h4{
+            color:orangered;
+            margin-top:10px;
+            text-align: center;
+        }
+        #cart button{
+            padding:8px;
+            color:white;
+            background-color: black;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-left: 230px;
+        }
+        #right{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+            width:30%;
+        }
+        #right div{
+            display: grid;
+            margin:auto;
+            margin-left: 100px;
+            padding:5px;
+        }
+        #right h2{
+            font-family:Jost, Arial, sans-serif;
+            font-size:30px;
+            color:rgb(17, 17, 17)
+        }
+        #right h3{
+            font-family:Jost, Arial, sans-serif;
+            font-size:20px;
+            color:rgb(17, 17, 17)
+        }
+        #right p{
+            font-family:Jost, Arial, sans-serif;
+            font-size:20px;
+            color:rgb(17, 17, 17)
+        }
+        #right button{
+            padding:10px;
+            background-color: black;
+            border-radius:10px;
+            margin:auto;
+        
+        }
+        #right button>a{
+            color:white;
+            text-decoration: none;
+        
+        }
+        #footer{
+        width:100%;
+        margin-top: 20px;
+        background-color: rgb(60, 57, 57);
+        }
+        #footer #upper{
+            /* margin-top: 50px; */
+            border:1px solid rgb(82, 82, 82) ;
+            width:100%;
+            height:180px;
+        }
+        #footer #upper>div:nth-child(1){
+            margin:auto;
+            margin-left: 38%;
+            color:rgb(255, 255, 255);
+            font-family:Jost, Arial, sans-serif;
+            font-size:23px;
+        }
+        #footer #upper>div:nth-child(2){
+            display:flex;
+            margin-left:30%;
+            margin-top:30px;
+        }
+        #footer #upper>div:nth-child(2)>input{
+            background-color:rgb(48, 48, 48);
+            color:white;
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            padding:15px;
+            width:40%;
+            border: none;
+        }
+        #footer #upper>div:nth-child(2)>button{
+            background-color:rgb(82, 82, 82);
+            font-family:Jost, Arial, sans-serif;
+            font-size:16px;
+            color:white;
+            width:15%;
+            margin-left: 8px;
+            border: none;
+        }
+        #footer #upper>div:nth-child(2)>button:hover{
+            cursor:pointer;
+        }
+        #footer #middle{
+            /* border:1px solid white; */
+            display:flex;
+            border:1px solid rgb(82, 82, 82) ;
+        }
+        #footer #middle #middle_first{
+            /* border:1px solid white; */
+            margin-top: 30px;
+            width:20%;
+            margin-left: 120px;
+        }
+        #footer #middle #middle_first>div:nth-child(1)>img{
+            /* border:1px solid yellow; */
+            height:120px;
+        }
+        #footer #middle #middle_first>div:nth-child(2)>img{
+            margin-top: 10px;
+            /* border:1px solid yellow; */
+            height:30px;
+            margin-left: 10px;
+        }
+        #footer #middle #middle_second{
+            width:80%;
+            /* border:1px solid white; */
+            display:flex;
+            gap:80px;
+            margin-left:100px;
+            color: white;
+        
+        }
+        #footer #middle #middle_second h3{
+            font-family:Jost, Arial, sans-serif;
+            font-size:13px;
+        }
+        #footer #middle #middle_second h3:hover{
+            cursor: pointer;
+        }
+        #footer #middle #middle_second p{
+            font-family:Jost, Arial, sans-serif;
+            font-size:13px;
+        }
+        #footer #middle #middle_second p:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #footer #lower{
+            display:flex;
+            border:1px solid rgb(82, 82, 82);
+        }
+        #footer #lower #lower_first{
+            width:60%;
+        }
+        #footer #lower #lower_last{
+            margin: auto;
+            width:40%;
+            margin-left: 50px;
+            display:flex;
+            gap:20px;
+            margin-left: 620px;
+        }
+        #footer #lower h3{
+            font-family:Jost, Arial, sans-serif;
+            font-size:14px;
+            color:white;
+            margin-left: 150px;
+        }
+        #footer #lower img{
+            /* margin: auto; */
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="start">
+            <a href="IndexTest.html"><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
+        </div>
+        <div id="middle">
+          <p> <a href="IndexTest.html">Home</a></p>  
+          <p> <a href="">About Us</a></p>  
+          <p> <a href="">Shop</a></p>  
+          <p> <a href="">Categories</a></p>  
+          <p> <a href="">Contact Us</a></p>  
+        </div>
+        <div id="last">
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
+            <a href="Login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
+            <a href="cart.html"><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
+            <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-around;">
+    <div id="cart"></div>
+    <div id="right">
+        <div>
+            <h2>Bill details</h2>
+        </div>
+        <div>
+            <h3>Total Items Price:</h3>
+            <p>₹<span class="tp1"></span> </p>
+        </div>
+        <div>
+            <h3>Product Discount:</h3>
+            <p>₹<span class="tp2"></span> </p>
+        </div>
+        <div>
+            <h3>Cart Total:</h3>
+            <p>₹<span class="tp3"></span></p>
+        </div>
+        <div>
+            <h3>Other Charges:</h3>
+            <p>₹<span class="tp4"></span> </p>
+        </div>
+        <div>
+            <h3>Total to Pay:</h3>
+            <p>₹<span class="tp5"></span></p>
+        </div>
+        <div>
+            <button id="select_ass"><a href="./checkout.html">SELECT ADDRESS</a> </button>
+        </div>
+     
+      </div>
+    </div>
+    <div id="footer">
+        <!-- <img src="https://www.uboric.com/wp-content/uploads/2020/08/google-play1.png" alt="image" /> -->
+        <div id="upper">
+          <div>
+            <h3>Want style Ideas and Treats?</h3>
+          </div>
+          <div>
+            <input type="email" placeholder="Enter Email *"/>
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div id="middle">
+         <div id="middle_first">
+          <div>
+           <img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/uboric.png" alt="Uboric_logo" />
+          </div>
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/44/44646.png" alt="facebook" />
+            <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
+          </div>
+         </div>
+         <div id="middle_second">
+            <div id="middle_second_first">
+              <h3>SUPPORT</h3>
+              <p>About Us</p>
+              <p>Contact Us</p>
+            </div>
+            <div id="middle_second_second">
+                <h3>SHOP</h3>
+                <p>My account</p>
+            </div>
+            <div id="middle_second_third">
+                <h3>COMPANY</h3>
+                <p>Shipping & Returns</p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div id="middle_second_fourth">
+                <h3>CONTACT</h3>
+                <p>Customer Care</p>
+                <p>Contact Support Available</p>
+                <p>Mon To Sat : 10:00 Am to 6:00 Pm</p>
+                <p>E-mail</p>
+                <p>uboricllp@gmail.com</p>
+                <p>Mobile</p>
+                <p>+91 97243 82162</p>
+                <p>+91 82000 99386</p>
+            </div>
+         </div>
+        </div>
+        <div id="lower">
+            <div id="lower_first">
+               <h3>© 2019 – 2022 UBORIC. ALL RIGHTS RESERVED.</h3>
+            </div>
+            <div id="lower_last">
+                <img src="https://cdn-icons-png.flaticon.com/512/44/44646.png" alt="facebook" />
+                <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+let total=0
+let addition = JSON.parse(localStorage.getItem("productlist"));
+addition.forEach(function(elem,index){
+    let box=document.createElement("div");
+
+    let poster = document.createElement("img");
+    poster.src=elem.poster;
+
+    let name = document.createElement("h3");
+    name.innerText=elem.name;
+
+    let price = document.createElement("h4")
+    price.innerText="₹"+" "+elem.price;
+    total+=elem.price
+    // let pic = document.createElement("p");
+    // pic.innerText=elem.pic;
+
+    let removebtn= document.createElement("button");
+    removebtn.innerText="remove";
+
+    removebtn.setAttribute("class","remove")
+    removebtn.addEventListener("click",function(){
+        addition.splice(index,1)
+        localStorage.setItem("productlist",JSON.stringify(addition))
+        window.location.reload()
+    })
+    box.append(poster,name,price,removebtn)
+    let container=document.getElementById("cart")
+    container.append(box)
+})
+
+/*
+ls.get item cartdat store in var
+span-> id
+ call span_Id
+spanId .innertext= cartadata.length
+ */
+
+
+//  let total=+JSON.parse(localStorage.getItem("f_Cart_Data"));
+
+    
+    localStorage.setItem(("total"),JSON.stringify(total))
+    let data=+JSON.parse(localStorage.getItem("total"))
+    
+    let tp1=document.querySelector(".tp1")
+    tp1.innerHTML=data
+    let dis=(data*10)/100
+    let tp2=document.querySelector(".tp2")
+    tp2.innerHTML=dis
+    let tp3=document.querySelector(".tp3")
+    tp3.innerHTML=data-dis
+    let tp4=document.querySelector(".tp4")
+    tp4.innerHTML=36
+    let tp5=document.querySelector(".tp5")
+    tp5.innerHTML=data-dis+36
+
+
+    document.getElementById("select_ass").addEventListener("click",function(){
+        localStorage.setItem(("total"),JSON.stringify(total))
+    })
+
+
+</script>

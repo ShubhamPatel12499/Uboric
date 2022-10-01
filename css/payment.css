@@ -1,0 +1,76 @@
+#paycart {
+    width: 25%;
+    /* margin-left: 5%; */
+    /* margin-top: 50px; */
+    margin: 50px auto auto auto;
+    text-align: center;
+    padding: 50px 30px;
+    color: #fffffd;
+    background-color:white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#paycart #toppay {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#paycart #payimg {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+#paycart #payimg>img {
+    width: 20%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#paycart input {
+    font-size: 18px;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#paycart input:focus {
+    outline: none;
+}
+
+#paycart #cardyear {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#paycart #month {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#paycart #year {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#paycart select {
+    height: 30px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+#paycart #paymentprocess {
+    border: none;
+    height: 35px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#paycart #paymentprocess:hover {
+    background-color: rgb(69, 64, 64);
+}
