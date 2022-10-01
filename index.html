@@ -164,15 +164,27 @@
             font-size:16px;
             color:rgb(255, 111, 97)
         }
-        #container>div>button{
-            width:40%;
-            font-size:20px;
+        #container .addcart{
+            width:35%;
+            font-size:15px;
             margin:auto;
             margin-bottom: 10px;
             border-radius: 10px;
             color:white;
             background-color: black;
+            padding:5px;
         }
+        #container .favourite{
+            width:30%;
+            font-size:15px;
+            margin:auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color:white;
+            background-color: black;
+            padding:5px;
+        }
+       
         #container-2{
             color:rgb(17, 17, 17);
             font-family:Jost, Arial, sans-serif;
@@ -190,11 +202,11 @@
             gap:20px;
         }
         #container-3 img{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             border-radius: 10px;
             width:24%;
             text-decoration:none solid rgb(17, 17, 17);
             display:flex;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
         #footer{
         /* border:1px solid red; */
@@ -329,7 +341,7 @@
         <div id="last">
             <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
             <a href="./html/login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
-            <a href=""><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
+            <a href="./html/wishlist.html"><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
             <a href="./html/cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
         </div>
     </div>
@@ -527,10 +539,10 @@
     }
   ]
 
-                     let data=JSON.parse(localStorage.getItem("productlist"))||[];
-                     displayData(Products)
-                     //   data.push(Products);
-                     // localStorage.setItem("data",JSON.stringify(data))
+                         let data=JSON.parse(localStorage.getItem("productlist"))||[];
+                         displayData(Products)
+                         //   data.push(Products);
+                        // localStorage.setItem("data",JSON.stringify(data))
 
                         function displayData(Products){
 
@@ -547,9 +559,10 @@
                         let price= document.createElement("p");
                         price.innerText="₹"+" " +elem.price;
 
-                        let button = document.createElement("button");
-                        button.innerText = "Add to Cart";
-                        button.addEventListener("click", function () {
+                        let Addbutton = document.createElement("button");
+                        Addbutton.innerText = "Add to Cart";
+                        Addbutton.setAttribute("class","addcart");
+                        Addbutton.addEventListener("click", function () {
                         let cartData = JSON.parse(localStorage.getItem("productlist")) || [];
                         if (cartDatapresent(cartData, elem) === false) {
                             cartData.push(elem);
@@ -560,7 +573,21 @@
                         }
                         });
 
-                        box.append(poster,Name,price,button);
+                        let Fbutton = document.createElement("button");
+                        Fbutton.innerText = "Favourite";
+                        Fbutton.setAttribute("class","favourite");
+                        Fbutton.addEventListener("click", function () {
+                        let cartData = JSON.parse(localStorage.getItem("favouritedata")) || [];
+                        if (cartDatapresent(cartData, elem) === false) {
+                            cartData.push(elem);
+                            localStorage.setItem("favouritedata", JSON.stringify(cartData));
+                            alert("Item successfully added to the wishlist");
+                        } else {
+                            alert("Item already in the wishlist");
+                        }
+                        });
+
+                        box.append(poster,Name,price,Addbutton,Fbutton);
                         document.querySelector("#container").append(box);
                         
                     });

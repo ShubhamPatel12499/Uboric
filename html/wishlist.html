@@ -68,6 +68,7 @@
         }
         #cart{
                 display:grid;
+                margin-top: 50px;
                 grid-template-columns:repeat(2,1fr);
                 gap:20px;
         }
@@ -93,50 +94,21 @@
             margin-top:10px;
             text-align: center;
         }
-        #cart button{
+        #cart .add{
             padding:8px;
             color:white;
             background-color: black;
             border-radius: 8px;
             font-size: 15px;
-            margin-left: 230px;
+            margin-left: 160px;
         }
-        #right{
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
-            width:30%;
-        }
-        #right div{
-            display: grid;
-            margin:auto;
-            margin-left: 100px;
-            padding:5px;
-        }
-        #right h2{
-            font-family:Jost, Arial, sans-serif;
-            font-size:30px;
-            color:rgb(17, 17, 17)
-        }
-        #right h3{
-            font-family:Jost, Arial, sans-serif;
-            font-size:20px;
-            color:rgb(17, 17, 17)
-        }
-        #right p{
-            font-family:Jost, Arial, sans-serif;
-            font-size:20px;
-            color:rgb(17, 17, 17)
-        }
-        #right button{
-            padding:10px;
-            background-color: black;
-            border-radius:10px;
-            margin:auto;
-        
-        }
-        #right button>a{
+        #cart .remove{
+            padding:8px;
             color:white;
-            text-decoration: none;
-        
+            background-color: black;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-left: 20px;
         }
         #footer{
         width:100%;
@@ -269,41 +241,12 @@
         <div id="last">
             <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
             <a href="./login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
-            <a href="./wishlist.html"><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
+            <a href="./cart.html"><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
             <a href="./cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
         </div>
     </div>
     <div style="display: flex; justify-content: space-around;">
     <div id="cart"></div>
-    <div id="right">
-        <div>
-            <h2>Bill details</h2>
-        </div>
-        <div>
-            <h3>Total Items Price:</h3>
-            <p>₹<span class="tp1"></span> </p>
-        </div>
-        <div>
-            <h3>Product Discount:</h3>
-            <p>₹<span class="tp2"></span> </p>
-        </div>
-        <div>
-            <h3>Cart Total:</h3>
-            <p>₹<span class="tp3"></span></p>
-        </div>
-        <div>
-            <h3>Other Charges:</h3>
-            <p>₹<span class="tp4"></span> </p>
-        </div>
-        <div>
-            <h3>Total to Pay:</h3>
-            <p>₹<span class="tp5"></span></p>
-        </div>
-        <div>
-            <button id="select_ass"><a href="./checkout.html">SELECT ADDRESS</a> </button>
-        </div>
-     
-      </div>
     </div>
     <div id="footer">
         <!-- <img src="https://www.uboric.com/wp-content/uploads/2020/08/google-play1.png" alt="image" /> -->
@@ -369,7 +312,7 @@
 </html>
 <script>
 let total=0
-let addition = JSON.parse(localStorage.getItem("productlist"));
+let addition = JSON.parse(localStorage.getItem("favouritedata"));
 addition.forEach(function(elem,index){
     let box=document.createElement("div");
 
@@ -384,6 +327,20 @@ addition.forEach(function(elem,index){
     total+=elem.price
     // let pic = document.createElement("p");
     // pic.innerText=elem.pic;
+    let button = document.createElement("button");
+    button.innerText = "Add to Cart";
+    button.setAttribute("class","add")
+    button.addEventListener("click", function () {
+    let cartData = JSON.parse(localStorage.getItem("productlist")) || [];
+    if (cartDatapresent(cartData, elem) === false) {
+        cartData.push(elem);
+        localStorage.setItem("productlist", JSON.stringify(cartData));
+        alert("Item successfully added to the cart");
+    } else {
+        alert("Item already in the cart");
+    }
+    });
+
 
     let removebtn= document.createElement("button");
     removebtn.innerText="remove";
@@ -391,44 +348,20 @@ addition.forEach(function(elem,index){
     removebtn.setAttribute("class","remove")
     removebtn.addEventListener("click",function(){
         addition.splice(index,1)
-        localStorage.setItem("productlist",JSON.stringify(addition))
+        localStorage.setItem("favouritedata",JSON.stringify(addition))
         window.location.reload()
     })
-    box.append(poster,name,price,removebtn)
+    box.append(poster,name,price, button,removebtn)
     let container=document.getElementById("cart")
     container.append(box)
+
+    function cartDatapresent(cartData, elem) {
+    for (let i = 0; i < cartData.length; i++) {
+    if (cartData[i].name === elem.name) {
+        return true;
+    }
+    }
+    return false;
+    }
 })
-
-/*
-ls.get item cartdat store in var
-span-> id
- call span_Id
-spanId .innertext= cartadata.length
- */
-
-
-//  let total=+JSON.parse(localStorage.getItem("f_Cart_Data"));
-
-    
-    localStorage.setItem(("total"),JSON.stringify(total))
-    let data=+JSON.parse(localStorage.getItem("total"))
-    
-    let tp1=document.querySelector(".tp1")
-    tp1.innerHTML=data
-    let dis=(data*10)/100
-    let tp2=document.querySelector(".tp2")
-    tp2.innerHTML=dis
-    let tp3=document.querySelector(".tp3")
-    tp3.innerHTML=data-dis
-    let tp4=document.querySelector(".tp4")
-    tp4.innerHTML=36
-    let tp5=document.querySelector(".tp5")
-    tp5.innerHTML=data-dis+36
-
-
-    document.getElementById("select_ass").addEventListener("click",function(){
-        localStorage.setItem(("total"),JSON.stringify(total))
-    })
-
-
 </script>
