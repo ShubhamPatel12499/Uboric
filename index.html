@@ -346,7 +346,7 @@
         </div>
     </div>
     <div id="slideshow">
-        <div id="slide">  </div>
+        <div id="slide"> <img src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">  </div>
         <button id="previous" onclick="previous()">></button>
         <button id="next" onclick="next()"><</button>
     </div>
@@ -428,10 +428,10 @@
 </html>
 <script>
      let image= [
-       "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
        "https://images.pexels.com/photos/8306363/pexels-photo-8306363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
        "https://images.pexels.com/photos/5418890/pexels-photo-5418890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-       "https://images.pexels.com/photos/5418897/pexels-photo-5418897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+       "https://images.pexels.com/photos/5418897/pexels-photo-5418897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+       "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ];
     let index=0;
     let id;
@@ -448,7 +448,7 @@
             img.src= image[index];
             container.append(img);
             index++;
-        },3500)
+        },2000)
     };
 
     // let stop=()=>{
@@ -484,7 +484,7 @@
                 img.setAttribute('src',image[index]);
             }
 
-            container.innerHTML = null;
+            // container.innerHTML = null;
             container.append(img);
         }
 
