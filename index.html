@@ -104,6 +104,8 @@
             gap:40px;
         }
         #index_middle img{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
             width:33%;
             text-decoration:none solid rgb(17, 17, 17);
             display:flex;
@@ -162,15 +164,27 @@
             font-size:16px;
             color:rgb(255, 111, 97)
         }
-        #container>div>button{
-            width:40%;
-            font-size:20px;
+        #container .addcart{
+            width:35%;
+            font-size:15px;
             margin:auto;
             margin-bottom: 10px;
             border-radius: 10px;
             color:white;
             background-color: black;
+            padding:5px;
         }
+        #container .favourite{
+            width:30%;
+            font-size:15px;
+            margin:auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color:white;
+            background-color: black;
+            padding:5px;
+        }
+       
         #container-2{
             color:rgb(17, 17, 17);
             font-family:Jost, Arial, sans-serif;
@@ -188,11 +202,11 @@
             gap:20px;
         }
         #container-3 img{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             border-radius: 10px;
             width:24%;
             text-decoration:none solid rgb(17, 17, 17);
             display:flex;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
         #footer{
         /* border:1px solid red; */
@@ -315,10 +329,10 @@
 <body onload="SlideShow()">
     <div id="navbar">
         <div id="start">
-            <a href=""><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
+            <a href="./index.html"><img src="https://outstripinfotech.com/wpword/razi/wp-content/uploads/2022/08/200x80black.png" alt="Error logo" /></a>
         </div>
         <div id="middle">
-          <p> <a href="">Home</a></p>  
+          <p> <a href="./index.html">Home</a></p>  
           <p> <a href="">About Us</a></p>  
           <p> <a href="">Shop</a></p>  
           <p> <a href="">Categories</a></p>  
@@ -326,13 +340,13 @@
         </div>
         <div id="last">
             <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search" /></a>
-            <a href="./Login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
-            <a href=""><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
-            <a href="./cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
+            <a href="./html/login.html"><img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User" /></a>
+            <a href="./html/wishlist.html"><img src="https://cdn3.iconfinder.com/data/icons/marketing-e-commerce/128/icons_-_marketing-41-512.png" alt="wishlist" /></a>
+            <a href="./html/cart.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJpV_Q-MKeIRt9KzLZInQCzygSyKaxNo09NtSfLFajfxK0VQfVtRbWcsWls8I58-Zbo4&usqp=CAU" alt="Cart" /></a>
         </div>
     </div>
     <div id="slideshow">
-        <div id="slide">  </div>
+        <div id="slide"> <img src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">  </div>
         <button id="previous" onclick="previous()">></button>
         <button id="next" onclick="next()"><</button>
     </div>
@@ -345,8 +359,8 @@
     <div id="container"></div>
     <h1 id="container-2">New Arrivals</h1>
     <div id="container-3">
-        <img src="https://www.uboric.com/wp-content/uploads/2022/09/vmfgz_512_webp-370x262.jpg" alt="image 1"/>
-        <img src="https://www.uboric.com/wp-content/uploads/2022/09/tqpgz_512_webp-370x342.jpg" alt="image 2"/>
+        <img src="https://static.fibre2fashion.com/MemberResources/LeadResources/4/2013/11/Seller/1364810/Images/1364810_1_mens%20casual%20shoes%20in%20artificial%20with%20design.jpg" alt="image 1"/>
+        <img src="https://fashionmasters.in/wp-content/uploads/2022/07/product-image-1513703875_1024x1024_2x_801d741e-7198-49ce-a7c1-806a9d980ed9.jpg" alt="image 2"/>
         <img src="https://www.uboric.com/wp-content/uploads/2022/08/519oLttxcZL._UL1000_-370x370.jpg" alt="image 3"/>
         <img src="https://www.uboric.com/wp-content/uploads/2022/08/41qdwDJY9qL._UL1000_-1-370x370.jpg" alt="image 4"/>
     </div>
@@ -414,10 +428,10 @@
 </html>
 <script>
      let image= [
-       "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
        "https://images.pexels.com/photos/8306363/pexels-photo-8306363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
        "https://images.pexels.com/photos/5418890/pexels-photo-5418890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-       "https://images.pexels.com/photos/5418897/pexels-photo-5418897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+       "https://images.pexels.com/photos/5418897/pexels-photo-5418897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+       "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ];
     let index=0;
     let id;
@@ -434,7 +448,7 @@
             img.src= image[index];
             container.append(img);
             index++;
-        },3500)
+        },2000)
     };
 
     // let stop=()=>{
@@ -470,7 +484,7 @@
                 img.setAttribute('src',image[index]);
             }
 
-            container.innerHTML = null;
+            // container.innerHTML = null;
             container.append(img);
         }
 
@@ -479,15 +493,15 @@
     name:"Quick & Easy 6 Blade Push Chopper 1000ML",
     price: 349.00
     },
-    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/5hto1_512_webp-370x282.jpg",
+    { poster:"https://5.imimg.com/data5/DE/GL/MY-22659923/men-s-casual-shoes-1000x1000.jpg",
     name:"Mens Casual Shoes",
     price: 799.00
     },
-    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/61ZFLlc1NcL-370x370.jpg",
+    { poster:"https://cdn.shopify.com/s/files/1/0554/3804/9327/products/4074f28f1bcd4be79297f66752ca2245_590x_720x_1024x1024_2x_f251e9e0-47c9-4f36-b3b4-5dc2edd8790e_1024x1024@2x.png?v=1659737134",
     name:"Electric Mini Food Processor with USB Cable",
     price:  499.00
     },
-    { poster:"https://www.uboric.com/wp-content/uploads/2022/09/tqpgz_512_webp-370x342.jpg",
+    { poster:"https://m.media-amazon.com/images/I/71IrnDFdGZL._AC_UL1500_.jpg",
     name:"Mens Casual Shoes",
     price: 1039.00,
     },
@@ -513,7 +527,7 @@
     },
     { poster:"https://www.uboric.com/wp-content/uploads/2022/08/2-2-1-370x370.png",
     name:"Hand blender",
-    price: 1975.50
+    price: 1975.00
     },
     { poster:"https://www.uboric.com/wp-content/uploads/2022/08/5-38-370x370.jpg",
     name:"Philips Air Purifier – Series 2000...",
@@ -525,9 +539,9 @@
     }
   ]
 
-                     let data=JSON.parse(localStorage.getItem("productlist"))||[];
-                     displayData(Products)
-                    //   data.push(Products);
+                         let data=JSON.parse(localStorage.getItem("productlist"))||[];
+                         displayData(Products)
+                         //   data.push(Products);
                         // localStorage.setItem("data",JSON.stringify(data))
 
                         function displayData(Products){
@@ -545,23 +559,46 @@
                         let price= document.createElement("p");
                         price.innerText="₹"+" " +elem.price;
 
-                        let button = document.createElement("button");
-                        button.setAttribute("class","book_now");
-                        button.onclick=()=>{
-                            saveData(elem);
+                        let Addbutton = document.createElement("button");
+                        Addbutton.innerText = "Add to Cart";
+                        Addbutton.setAttribute("class","addcart");
+                        Addbutton.addEventListener("click", function () {
+                        let cartData = JSON.parse(localStorage.getItem("productlist")) || [];
+                        if (cartDatapresent(cartData, elem) === false) {
+                            cartData.push(elem);
+                            localStorage.setItem("productlist", JSON.stringify(cartData));
+                            alert("Item successfully added to the cart");
+                        } else {
+                            alert("Item already in the cart");
                         }
-                        button.innerText= "ADD";
+                        });
 
-                        box.append(poster,Name,price,button);
+                        let Fbutton = document.createElement("button");
+                        Fbutton.innerText = "Favourite";
+                        Fbutton.setAttribute("class","favourite");
+                        Fbutton.addEventListener("click", function () {
+                        let cartData = JSON.parse(localStorage.getItem("favouritedata")) || [];
+                        if (cartDatapresent(cartData, elem) === false) {
+                            cartData.push(elem);
+                            localStorage.setItem("favouritedata", JSON.stringify(cartData));
+                            alert("Item successfully added to the wishlist");
+                        } else {
+                            alert("Item already in the wishlist");
+                        }
+                        });
+
+                        box.append(poster,Name,price,Addbutton,Fbutton);
                         document.querySelector("#container").append(box);
                         
                     });
-                    }
 
-                       let saveData = (elem) =>{
-                        data.push(elem);
-                        localStorage.setItem("productlist",JSON.stringify(data));
-                        alert("Product has been added to the cart")
-                        // window.location.href="checkout.html"
-                       }
+                    function cartDatapresent(cartData, elem) {
+                        for (let i = 0; i < cartData.length; i++) {
+                        if (cartData[i].name === elem.name) {
+                            return true;
+                        }
+                        }
+                        return false;
+                     }
+                    }
 </script>

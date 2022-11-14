@@ -21,7 +21,7 @@ price: 1799.00,
 },
 { poster:"https://www.uboric.com/wp-content/uploads/2022/08/IMG_20220326_174041_206_11-370x370.jpg",
 name:"26 carat Elegant Jewellery Necklace",
-price:"₹ 5,499.00"
+price: 5499.00,
 },
 { poster:"https://www.uboric.com/wp-content/uploads/2022/08/png_20220328_105434_0000-370x370.png",
 name:"26 carat Elegant Jewellery Golden Ring all...",
@@ -37,7 +37,7 @@ price:1169.00
 },
 { poster:"https://www.uboric.com/wp-content/uploads/2022/08/2-2-1-370x370.png",
 name:"Hand blender",
-price: 1975.50
+price: 1975.00
 },
 { poster:"https://www.uboric.com/wp-content/uploads/2022/08/5-38-370x370.jpg",
 name:"Philips Air Purifier – Series 2000...",
