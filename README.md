@@ -1,4 +1,4 @@
-# Uboric_Clone/excited-roof-1669
+# Uboric/excited-roof-1669
 
 Uboric is a e-commerce website, Provide styles fashion products and kitchen accessories.
 Uboric is a Best Online Shopping & Secure Site in India with over 10,000+ Styles. 
