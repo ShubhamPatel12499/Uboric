@@ -18,5 +18,3 @@ Tech Stack-:
 - HTML
 - CSS
 - Java Script
-- React JS
-- Chakra UI
