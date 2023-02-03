@@ -18,6 +18,7 @@ Tech Stack-:
 - HTML
 - CSS
 - Java Script
+- Form Validation
 
 <!-- Landing Page-:
 <img src=""/> -->
